@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import com.extramarks.springboot_practice.repository.*;
 import java.util.List;
+//import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
 public class FormController {
@@ -30,4 +32,11 @@ public class FormController {
         Form insertedForm=formRepository.insert(form);
         return "Form created for "+ insertedForm.getName()+".";
     }
+    
+//	@PutMapping(path ="/create/{id}")
+//	public String updateEntry(Form form, @PathVariable("id") Integer id) {
+//		Form temp = formRepository.findAllById(id).orElse(null);
+//		form.addAttribute("newEntry", temp);
+//		return "index";
+//	}
 }
